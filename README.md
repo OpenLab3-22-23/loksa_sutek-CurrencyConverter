@@ -7,11 +7,11 @@ Premení akúkoľvek menu pomocou API na akúkoľvek inú v rýchlosti mihnutia 
 <hr>
 <h2>Rozloženie práce:</h2>
 
-<h3>Hlavná časť strány:<h3>
+<h3>Hlavná časť strány:</h3>
 Šutek -> Funkcionalita
 Lokša -> UI
 
-<h3>Zoznam mien:<h3>
+<h3>Zoznam mien:</h3>
 Šutek -> UI
 Lokša -> Funkcionalita
 
