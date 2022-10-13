@@ -6,6 +6,13 @@ Nástroj na premenu mien.<br>
 Premení akúkoľvek menu pomocou API na akúkoľvek inú v rýchlosti mihnutia oka 👍
 <hr>
 <h2>Rozloženie práce:</h2>
-Pri každej feature sa dohodneme, kto urobí UI a kto urobí logiku danej funkcie, aby bola práca rozložená a obaja sme si vyskúšali obe práce. 
+
+<h3>Hlavná časť strány:<h3>
+Šutek -> Funkcionalita
+Lokša -> UI
+
+<h3>Zoznam mien:<h3>
+Šutek -> UI
+Lokša -> Funkcionalita
 
 
