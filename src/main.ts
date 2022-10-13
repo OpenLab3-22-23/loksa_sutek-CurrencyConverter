@@ -1,5 +1,19 @@
 import './style.css'
 
+document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
+<h1 id="Title">Currency Converter</h1>
+<center>
+
+<div id="inLine">
+    <input type="number"/> 
+	<a>=</a>
+	<a>0.00</a>
+</div>
+<br>
+<button>SUBMIT</button>
+</center>
+`
+
 
 const options = {
 	method: 'GET',
