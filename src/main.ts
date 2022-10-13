@@ -7,12 +7,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
 <div id="inLine">
     <input type="number"/> 
 	<a>=</a>
-	<a>0.00</a>
+	<a id="result">0.00</a>
 </div>
 <br>
-<button>SUBMIT</button>
+<button onlcick = "submite()">SUBMIT</button>
 </center>
 `
+
 
 
 const options = {
@@ -28,3 +29,9 @@ fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 	
+const x = document.getElementById("result");
+function submite() {
+	try{
+		
+	}
+}
