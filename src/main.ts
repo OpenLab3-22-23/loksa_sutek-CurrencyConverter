@@ -4,13 +4,18 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
 <h1 id="Title">Currency Converter</h1>
 <center>
 
-<div id="inLine">
-    <input type="number"/> 
-	<a>=</a>
-	<a>0.00</a>
+<div class="color-box">
+    <div id="inLine">
+        <input type="number"/> 
+	    <a>=</a>
+	    <a>0.00</a>
+    </div>
 </div>
+
 <br>
 <button>SUBMIT</button>
+
+
 </center>
 `
 
