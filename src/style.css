@@ -6,3 +6,12 @@ h1 {
 #inLine {
     display: inline;
 }
+
+
+.color-box {
+    width: 500px;
+    height: 100px;
+    background-color: lightgray;
+    position: center;
+
+}
