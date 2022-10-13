@@ -7,7 +7,7 @@ Premení akúkoľvek menu pomocou API na akúkoľvek inú v rýchlosti mihnutia 
 <hr>
 <h2>Rozloženie práce:</h2>
 
-<h3>Hlavná časť strány:</h3>
+<h3>Hlavná (horná) časť stránky:</h3>
 Šutek -> Funkcionalita<br>
 Lokša -> UI
 
