@@ -4,33 +4,18 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
 <h1 id="Title">Currency Converter</h1>
 <center>
 
-<<<<<<< HEAD
-<div id="inLine">
-    <input type="number"/> 
-	<a>=</a>
-	<a id="result">0.00</a>
-=======
 <div class="color-box">
     <div id="inLine">
-        <input type="number"/> 
+        <input id="Number" type="number"/> 
 	    <a>=</a>
-	    <a>0.00</a>
     </div>
->>>>>>> 0bc41ec128006b28527f6c7842ebcc9f53543969
 </div>
 
 <br>
-<<<<<<< HEAD
-<button onlcick = "submite()">SUBMIT</button>
-=======
-<button>SUBMIT</button>
-
-
->>>>>>> 0bc41ec128006b28527f6c7842ebcc9f53543969
 </center>
 `
 
-
+var y;
 
 const options = {
 	method: 'GET',
@@ -39,15 +24,30 @@ const options = {
 		'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
 	}
 };
+ 	
+function submite(curr: string) {
+	  const r = Number(document.getElementById("Number")) *  y;
+		result.textContent=curr;
+}
 
 fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+ 	.then(response => response.json())
+ 	.then(response => {
+ 		console.log(response);
+ 		y = response.rates.CZK;
+ 	})
+	 .catch(err => console.error(err));
+
+//var x = document.getElementById("Result");
+const result = document.createElement('p');
+result.textContent = '';
+result.id = 'result';
+const btn = document.createElement('button');
+btn.textContent = 'Click'
+btn.addEventListener('click', () => submite(y))
+
+document.getElementById('inLine').appendChild(result);
+document.getElementById('inLine').appendChild(btn);
+
+
 	
-const x = document.getElementById("result");
-function submite() {
-	try{
-		
-	}
-}
