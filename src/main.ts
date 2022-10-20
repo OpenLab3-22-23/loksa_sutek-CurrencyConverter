@@ -2,18 +2,36 @@ import './style.css'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
 <h1 id="Title">Currency Converter</h1>
+
 <center>
 
-<div class="color-box">
-    <div id="inLine">
+<div class="flex-container">
+    <div>
+        <a>€</a>
+	</div>
+
+	<div>
         <input id="Number" type="number"/> 
 	    <a>=</a>
+	    <a>0.00</a>		
     </div>
+
+	<div>
+        <a>CZK</a>
+	</div>
+
 </div>
 
+<div id="inLine">
+</div>
+
+ 
+
 <br>
+
 </center>
 `
+
 
 var y;
 
@@ -24,6 +42,7 @@ const options = {
 		'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
 	}
 };
+
  	
 function submite(curr: string) {
 	  const r = Number(document.getElementById("Number")) *  y;
@@ -44,10 +63,10 @@ result.textContent = '';
 result.id = 'result';
 const btn = document.createElement('button');
 btn.textContent = 'Click'
+btn.id = "submitButton"
 btn.addEventListener('click', () => submite(y))
 
 document.getElementById('inLine').appendChild(result);
 document.getElementById('inLine').appendChild(btn);
-
 
 	
