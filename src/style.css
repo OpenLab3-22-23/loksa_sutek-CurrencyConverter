@@ -1,17 +1,48 @@
-h1 {
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Saira:wght@400&display=swap');
+
+html {
+    height: 100%;
+    background-image: radial-gradient(#3a9633, #1e434a);
+}
+
+
+
+a, button {
+    font-size: 30px;
     font-family: 'Oswald', sans-serif;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Saira', sans-serif;
 }
 
-#inLine {
-    display: inline;
+h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 45px;
 }
 
 
-.color-box {
-    width: 500px;
-    height: 100px;
+
+.flex-container {
+    display: flex;
+    justify-content: center;  
+}
+  
+.flex-container > div {
     background-color: lightgray;
-    position: center;
-
+    margin: 10px;
+    padding: 50px;
+    border: 2px solid black;
 }
+.flex-container > div > * {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+
+#submitButton {
+    border: 1px solid black;
+}
+
