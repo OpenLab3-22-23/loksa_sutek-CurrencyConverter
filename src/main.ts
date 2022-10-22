@@ -13,27 +13,22 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =`
 	<div>
         <input id="Number" type="number"/> 
 	    <a>=</a>
-	    <a>0.00</a>		
+	    <a id="result">0.000</a>
     </div>
 
 	<div>
         <a>CZK</a>
 	</div>
-
 </div>
 
-<div id="inLine">
-</div>
-
- 
-
-<br>
+<div id="SubmitButton"></div>
 
 </center>
 `
 
 
-var y;
+var rate;
+
 
 const options = {
 	method: 'GET',
@@ -43,30 +38,32 @@ const options = {
 	}
 };
 
+fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+		rate = response.rates.CZK;
+		result.textContent = "Conversion rate: " + rate;
+    })
+    .catch(err => console.error(err));
+
+
+
  	
-function submite(curr: string) {
-	  const r = Number(document.getElementById("Number")) *  y;
-		result.textContent=curr;
+function Submit() {
+	document.getElementById('result').innerHTML = (document.getElementById('Number').value * rate).toFixed(3);
 }
 
-fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
- 	.then(response => response.json())
- 	.then(response => {
- 		console.log(response);
- 		y = response.rates.CZK;
- 	})
-	 .catch(err => console.error(err));
 
-//var x = document.getElementById("Result");
 const result = document.createElement('p');
-result.textContent = '';
 result.id = 'result';
-const btn = document.createElement('button');
-btn.textContent = 'Click'
-btn.id = "submitButton"
-btn.addEventListener('click', () => submite(y))
 
-document.getElementById('inLine').appendChild(result);
-document.getElementById('inLine').appendChild(btn);
+const btn = document.createElement('button');
+btn.textContent = 'Convert'
+btn.id = "submitButton"
+btn.addEventListener('click', () => Submit())
+
+document.getElementById('SubmitButton').appendChild(result);
+document.getElementById('SubmitButton').appendChild(btn);
 
 	
