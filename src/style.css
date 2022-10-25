@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Saira:wght@400&display=swap');
-
 html {
     height: 100%;
     background-image: radial-gradient(#3a9633, #1e434a);
@@ -9,7 +8,7 @@ html {
 
 
 
-a, button {
+a, p, button {
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
     font-family: 'Saira', sans-serif;
@@ -27,13 +26,16 @@ h1 {
 .flex-container {
     display: flex;
     justify-content: center;  
-}
-  
+}  
 .flex-container > div {
     background-color: lightgray;
     margin: 10px;
     padding: 50px;
     border: 2px solid black;
+}
+.flex-container > #currencyBox {
+    width: 50px;
+    height: 50px;
 }
 .flex-container > div > * {
     vertical-align: middle;
@@ -42,7 +44,9 @@ h1 {
 
 
 
-#submitButton {
+button {
     border: 1px solid black;
+    margin: 10px;
 }
+
 
