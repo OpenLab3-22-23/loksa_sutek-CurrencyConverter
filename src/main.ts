@@ -59,7 +59,10 @@ function Convert() {
 }
 
 function SwitchCurrencies() {
-
+let x = 0
+x = currDropdown1.selectedIndex;
+currDropdown1.selectedIndex = currDropdown2.selectedIndex;
+currDropdown2.selectedIndex = x;
 }
 
 
@@ -67,7 +70,6 @@ function SwitchCurrencies() {
 
 const result = document.createElement('p');
 result.id = 'result';
-
 const btn1 = document.createElement('button');
 btn1.textContent = 'Convert'
 btn1.id = "submitButton"
@@ -103,5 +105,3 @@ document.getElementById('SubmitButton')!.appendChild(btn1);
 document.getElementById('SwitchButton')!.appendChild(btn2);
 document.getElementById('currencyBox1')!.appendChild(currDropdown1);
 document.getElementById('currencyBox2')!.appendChild(currDropdown2);
-
-
