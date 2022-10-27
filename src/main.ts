@@ -1,4 +1,5 @@
 import './style.css'
+import obrazok from "./exchange.png"
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <h1 id="Title">Currency Converter</h1>
@@ -6,6 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <div class="flex-container">
     <div class="currencyBox" id="currencyBox1">
         <a id="currencyFromName">-</a>
+		<br>
 	</div>
 
 	<div>
@@ -16,10 +18,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 	<div class="currencyBox" id="currencyBox2">
         <a id="currencyToName">-</a>
+		<br>
 	</div>
 </div>
-<div id="SubmitButton"></div>
 <div id="SwitchButton"></div>
+<div id="SubmitButton"></div>
 </center>
 `
 
@@ -37,17 +40,17 @@ const options = {
 	}
 };
 
-fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
+
+
+
+function Convert() {
+	fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
 	.then(response => response.json())
 	.then(response => {
 		currencyResponse = response.rates;
 	})
 	.catch(err => console.error(err));
 
-
-
-
-function Convert() {
 	var e = document.getElementById("currencyPickerFrom");
 	let currencyFrom = e.options[e.selectedIndex].text;
 	var e = document.getElementById("currencyPickerTo");
@@ -59,10 +62,10 @@ function Convert() {
 }
 
 function SwitchCurrencies() {
-let x = 0
-x = currDropdown1.selectedIndex;
-currDropdown1.selectedIndex = currDropdown2.selectedIndex;
-currDropdown2.selectedIndex = x;
+	let x = 0
+    x = currDropdown1.selectedIndex;
+    currDropdown1.selectedIndex = currDropdown2.selectedIndex;
+    currDropdown2.selectedIndex = x;
 }
 
 
@@ -70,19 +73,23 @@ currDropdown2.selectedIndex = x;
 
 const result = document.createElement('p');
 result.id = 'result';
+
 const btn1 = document.createElement('button');
 btn1.textContent = 'Convert'
 btn1.id = "submitButton"
 btn1.addEventListener('click', () => Convert())
 
-const btn2 = document.createElement('button');
-btn2.textContent = 'Switch'
+const btn2 = document.createElement('a');
+const exchangeImage = document.createElement("img");
+exchangeImage.height = 40;
+exchangeImage.setAttribute("src", obrazok);
+btn2.appendChild(exchangeImage);
 btn2.id = "switchButton"
 btn2.addEventListener('click', () => SwitchCurrencies())
 
 const currDropdown1 = document.createElement('select');
 currDropdown1.id = "currencyPickerFrom";
-//currDropdown1.addEventListener('change', () => Refresh())
+currDropdown1.addEventListener('change', () => Refresh())
 for (let i = 0; i < currencyList.length; i++) {
 	var option = document.createElement("option");
 	option.text = currencyList[i];
@@ -91,7 +98,7 @@ for (let i = 0; i < currencyList.length; i++) {
 
 const currDropdown2 = document.createElement('select');
 currDropdown2.id = "currencyPickerTo";
-//currDropdown2.addEventListener('change', () => Refresh())
+currDropdown2.addEventListener('change', () => Refresh())
 for (let i = 0; i < currencyList.length; i++) {
 	var option = document.createElement("option");
 	option.text = currencyList[i];
@@ -105,3 +112,4 @@ document.getElementById('SubmitButton')!.appendChild(btn1);
 document.getElementById('SwitchButton')!.appendChild(btn2);
 document.getElementById('currencyBox1')!.appendChild(currDropdown1);
 document.getElementById('currencyBox2')!.appendChild(currDropdown2);
+
