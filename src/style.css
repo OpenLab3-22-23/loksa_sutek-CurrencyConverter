@@ -1,6 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Saira:wght@400&display=swap');
+
 html {
     height: 100%;
     background-image: radial-gradient(#3a9633, #1e434a);
@@ -25,28 +25,42 @@ h1 {
 
 .flex-container {
     display: flex;
-    justify-content: center;  
-}  
-.flex-container > div {
-    background-color: lightgray;
-    margin: 10px;
-    padding: 50px;
-    border: 2px solid black;
+    justify-content: center;
+    margin-top: 50px;
 }
-.flex-container > #currencyBox {
-    width: 50px;
-    height: 50px;
-}
-.flex-container > div > * {
-    vertical-align: middle;
-    display: inline-block;
-}
+
+    .flex-container > div {
+        background-color: lightgray;
+        margin: 10px;
+        padding: 50px 50px 10px 50px;
+        border: 2px solid black;
+    }
+
+    .flex-container > #currencyBox {
+        width: 50px;
+        height: 50px;
+    }
+
+    .flex-container > div > input, a {
+        vertical-align: middle;
+        display: inline-block;
+    }
 
 
 
 button {
     border: 1px solid black;
     margin: 10px;
+    padding: 5px 15px 5px 15px;
 }
+    button:hover {
+        background-color: #999999;
+        color: white;
+        opacity: 0.9;       
+        transition: 0.7s;
+    }
 
-
+#switchButton:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
