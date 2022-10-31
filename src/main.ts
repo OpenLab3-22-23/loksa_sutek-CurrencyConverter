@@ -40,6 +40,7 @@ const options = {
 
 
 function Convert() {
+	document.getElementById('result')!.innerText = ".............."
 	fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest?from=USD&to=EUR%2CGBP', options)
 		.then(response => response.json())
 		.then(response => {
@@ -50,7 +51,7 @@ function Convert() {
 			let currencyTo = i.options[i.selectedIndex].text;
 
 			let valueInEUR = document.getElementById('Number')!.value / currencyResponse[currencyFrom];
-			document.getElementById('result')!.innerHTML = (valueInEUR * currencyResponse[currencyTo]).toFixed(3);
+			document.getElementById('result')!.innerText = (valueInEUR * currencyResponse[currencyTo]).toFixed(3);
 		})
 		.catch(err => console.error(err));
 }
